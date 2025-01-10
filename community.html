@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom CSS -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 15px;
+        }
+
+        /* Header Section */
+        .community-header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .community-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .community-header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff3b2d;
+            transform: scale(1.1);
+        }
+
+        /* Activities Section */
+        .community-activities {
+            background: #f5f5f5;
+            padding: 50px 15px;
+        }
+
+        .community-activities h2 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-body h3 {
+            font-size: 1.5rem;
+            color: #444;
+        }
+
+        .card-body p {
+            color: #666;
+            margin: 10px 0 0;
+        }
+
+        /* Members Section */
+        .community-members {
+            background-color: #21d3d1;
+            color: black;
+            padding: 50px 15px;
+        }
+
+        .community-members h2 {
+            margin-bottom: 20px;
+        }
+
+        /* Members container */
+        .members-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* Individual member card styling */
+        .member-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            padding: 15px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Member profile image (circular) */
+        .member-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 5px solid #21d3d1;
+            transition: transform 0.3s ease;
+        }
+
+        .member-image:hover {
+            transform: scale(1.1);
+        }
+
+        .member-card h3 {
+            font-size: 1.5rem;
+            color: #444;
+        }
+
+        .member-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .members-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Footer */
+        .community-footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #f8f9fa;
+            /* Light background */
+            border-bottom: 2px solid #eaeaea;
+            /* Subtle border */
+        }
+
+        .nav-link {
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-link:hover {
+            color: #007bff;
+            /* Highlight on hover */
+        }
+
+        .navbar-brand img {
+            width: 60px;
+            /* Logo size */
+            height: 60px;
+            /* Logo size */
+            border-radius: 50%;
+            /* Circular shape */
+            object-fit: cover;
+            /* Ensures proper logo fit */
+            margin-bottom: 5px;
+            /* Adjusts the gap to move the text lower */
+        }
+
+        .navbar-brand {
+            display: flex;
+            /* Enables flexbox layout */
+            align-items: center;
+            /* Aligns items vertically */
+            gap: 10px;
+            /* Adds space between logo and text */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Custom font style */
+            font-size: 1.5rem;
+            /* Font size */
+            font-weight: 700;
+            /* Bold font */
+            color: #333;
+            /* Text color */
+            transition: color 0.3s ease-in-out;
+        }
+
+        .navbar-brand:hover {
+            color: #007bff;
+            /* Change text color on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/ngo-organisation-logo-design-template-c7743343fbd04ee5b4bc57047cd28da6_screen.jpg?ts=1698328069"
+                    alt="Foundation Logo" width="40" height="40" class="d-inline-block align-text-top">
+                Our Foundation
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./programs.html">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./events.html">Events</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Get Involved
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./volunteer.html">Volunteer</a></li>
+                            <li><a class="dropdown-item" href="./donate.html">Donate</a></li>
+                            <li><a class="dropdown-item" href="./partnerships.html">Partnerships</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Community Header -->
+    <header class="community-header">
+        <div class="container">
+            <h1>Welcome to Our Vibrant Community</h1>
+            <p>Be part of a growing network dedicated to positive change and collaboration.</p>
+            <a href="#join" class="btn-primary">Join Us</a>
+        </div>
+    </header>
+
+    <!-- Community Activities Section -->
+    <section class="community-activities">
+        <div class="container text-center">
+            <h2>Community Activities</h2>
+            <div class="row">
+                <div class="card">
+                    <img src="activity1.jpg" alt="Workshops">
+                    <div class="card-body">
+                        <h3>Workshops</h3>
+                        <p>Engage in hands-on sessions with experts.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="activity2.jpg" alt="Volunteer Programs">
+                    <div class="card-body">
+                        <h3>Volunteer Programs</h3>
+                        <p>Make a difference by volunteering with us.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="activity3.jpg" alt="Networking Events">
+                    <div class="card-body">
+                        <h3>Networking Events</h3>
+                        <p>Meet and grow with like-minded individuals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Members Section -->
+    <section class="community-members">
+        <div class="container text-center">
+            <h2>Our Members</h2>
+            <div class="members-container">
+                <div class="member-card">
+                    <img src="member1.jpg" alt="Member 1" class="member-image">
+                    <h3>John Doe</h3>
+                    <p>Role: Coordinator</p>
+                </div>
+                <div class="member-card">
+                    <img src="member2.jpg" alt="Member 2" class="member-image">
+                    <h3>Jane Smith</h3>
+                    <p>Role: Volunteer</p>
+                </div>
+                <div class="member-card">
+                    <img src="member3.jpg" alt="Member 3" class="member-image">
+                    <h3>Michael Brown</h3>
+                    <p>Role: Organizer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <script>
+        fetch('./footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
+    <div id="footer-container"></div>
+</body>
+
+</html>

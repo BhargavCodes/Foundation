@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Programs - Our Foundation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .hero-education {
+            background-image: url('https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg');
+            /* Replace with your desired image URL */
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-education h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .cta-button {
+            background-color: #ffcc00;
+            /* Button background color */
+            color: black;
+            /* Button text color */
+            padding: 10px 20px;
+            /* Button padding */
+            text-decoration: none;
+            /* Removes underline from link */
+            border-radius: 5px;
+            /* Rounds button corners */
+            transition: background-color 0.3s;
+            /* Smooth transition for hover effect */
+        }
+
+        .cta-button:hover {
+            background-color: #e6b800;
+            /* Darkens button on hover */
+        }
+
+        .carousel {
+            margin: 20px 0;
+        }
+
+        .carousel-item {
+            text-align: center;
+        }
+
+        .carousel-image {
+            height: 250px;
+            /* Set a fixed height for the images */
+            object-fit: cover;
+            /* Ensures the image covers the area without distortion */
+            width: 40%;
+            /* Ensures the image takes the full width of the carousel */
+        }
+
+        .resources,
+        .events,
+        .impact-stories,
+        .feedback {
+            padding: 20px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .resource-card,
+        .event-card,
+        .story-card {
+            border: 1px solid #ddd;
+            /* Add border to cards */
+            border-radius: 8px;
+            /* Rounded corners */
+            padding: 1.5rem;
+            /* Increased padding for better spacing */
+            text-align: center;
+            /* Center text */
+            transition: transform 0.3s;
+            /* Smooth scaling effect */
+            background: white;
+            /* Background color for cards */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow for depth */
+        }
+
+        .resource-card:hover,
+        .event-card:hover,
+        .story-card:hover {
+            transform: scale(1.05);
+            /* Scale effect on hover */
+        }
+
+        .resource-card i {
+            color: #007bff;
+            /* Color for icons in resource cards */
+        }
+
+        .event-card img,
+        .story-card img {
+            border-radius: 8px;
+            /* Rounded corners for images */
+        }
+
+        .btn {
+            margin-top: 1rem;
+            /* Space above buttons */
+        }
+
+        .feedback form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feedback input,
+        .feedback textarea {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .feedback button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .feedback button:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .navbar {
+            background-color: #f8f9fa;
+            /* Light background */
+            border-bottom: 2px solid #eaeaea;
+            /* Subtle border */
+        }
+
+        .nav-link {
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-link:hover {
+            color: #007bff;
+            /* Highlight on hover */
+        }
+
+        .navbar-brand img {
+            width: 60px;
+            /* Logo size */
+            height: 60px;
+            /* Logo size */
+            border-radius: 50%;
+            /* Circular shape */
+            object-fit: cover;
+            /* Ensures proper logo fit */
+            margin-bottom: 5px;
+            /* Adjusts the gap to move the text lower */
+        }
+
+        .navbar-brand {
+            display: flex;
+            /* Enables flexbox layout */
+            align-items: center;
+            /* Aligns items vertically */
+            gap: 10px;
+            /* Adds space between logo and text */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Custom font style */
+            font-size: 1.5rem;
+            /* Font size */
+            font-weight: 700;
+            /* Bold font */
+            color: #333;
+            /* Text color */
+            transition: color 0.3s ease-in-out;
+        }
+
+        .navbar-brand:hover {
+            color: #007bff;
+            /* Change text color on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/ngo-organisation-logo-design-template-c7743343fbd04ee5b4bc57047cd28da6_screen.jpg?ts=1698328069"
+                    alt="Foundation Logo">
+                Our Foundation
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./programs.html">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./events.html">Events</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Get Involved
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./volunteer.html">Volunteer</a></li>
+                            <li><a class="dropdown-item" href="./donate.html">Donate</a></li>
+                            <li><a class="dropdown-item" href="./partnerships.html">Partnerships</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-education">
+        <div class="hero-content">
+            <h1>Empowering Through Education</h1>
+            <p>Join us in transforming lives through accessible learning opportunities.</p>
+            <a href="./programs.html" class="cta-button">Explore Programs</a>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <div id="programsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://c8.alamy.com/comp/MR0G79/random-pictures-MR0G79.jpg" class="d-block w-100"
+                    alt="Program 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Program Title 1</h5>
+                    <p>Brief description of the program.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.shutterstock.com/shutterstock/photos/2274412231/display_1500/stock-vector-many-rainbow-gradient-random-bright-soft-balls-background-colorful-balls-background-for-kids-zone-2274412231.jpg"
+                    class="d-block w-100" alt="Program 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Program Title 2</h5>
+                    <p>Brief description of the program.</p>
+                </div>
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#programsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#programsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Interactive Learning Resources -->
+    <section class="resources py-5">
+        <h2 class="text-center">Interactive Learning Resources</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="resource-card">
+                        <i class="fas fa-book fa-3x"></i>
+                        <h3>Quiz: Test Your Knowledge!</h3>
+                        <p>Engage with our fun quizzes to test your understanding of key concepts.</p>
+                        <a href="#" class="btn btn-primary">Take Quiz</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="resource-card">
+                        <i class="fas fa-chart-pie fa-3x"></i>
+                        <h3>Infographic: The Importance of Education</h3>
+                        <p>Explore our infographic that highlights the impact of education on communities.</p>
+                        <a href="#" class="btn btn-primary">View Infographic</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="resource-card">
+                        <i class="fas fa-video fa-3x"></i>
+                        <h3>Video Tutorials</h3>
+                        <p>Watch our video tutorials to learn about various educational topics.</p>
+                        <a href="#" class="btn btn-primary">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="events py-5 bg-light">
+        <h2 class="text-center">Upcoming Events</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="event-card">
+                        <img src="https://source.unsplash.com/300x200/?workshop" alt="Workshop" class="img-fluid">
+                        <h3>Workshop on Educational Strategies</h3>
+                        <p>Date: March 15, 2023</p>
+                        <p>Join us for an interactive workshop on effective educational strategies.</p>
+                        <a href="#" class="btn btn-warning">Register</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="event-card">
+                        <img src="https://source.unsplash.com/300x200/?seminar" alt="Seminar" class="img-fluid">
+                        <h3>Seminar on Community Learning</h3>
+                        <p>Date: March 22, 2023</p>
+                        <p>Participate in our seminar to learn about community learning initiatives.</p>
+                        <a href="#" class="btn btn-warning">Register</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="event-card">
+                        <img src="https://source.unsplash.com/300x200/?conference" alt="Conference" class="img-fluid">
+                        <h3>Annual Education Conference</h3>
+                        <p>Date: April 10, 2023</p>
+                        <p>Don't miss our annual conference featuring expert speakers and workshops.</p>
+                        <a href="#" class="btn btn-warning">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="impact-stories py-5">
+        <h2 class="text-center">Success Stories</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="story-card">
+                        <img src="https://source.unsplash.com/300x200/?student" alt="Success Story 1" class="img-fluid">
+                        <h3>How Education Changed My Life</h3>
+                        <p> "Education opened doors for me that I never thought possible. I am now pursuing my dreams!"
+                        </p>
+                        <a href="#" class="btn btn-info">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="story-card">
+                        <img src="https://source.unsplash.com/300x200/?graduation" alt="Success Story 2"
+                            class="img-fluid">
+                        <h3>From Struggles to Success</h3>
+                        <p>"With the right support, I overcame my challenges and graduated with honors!"</p>
+                        <a href="#" class="btn btn-info">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="story-card">
+                        <img src="https://source.unsplash.com/300x200/?mentor" alt="Success Story 3" class="img-fluid">
+                        <h3>The Power of Mentorship</h3>
+                        <p>"Having a mentor made all the difference in my educational journey."</p>
+                        <a href="#" class="btn btn-info">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section class="feedback">
+        <h2>We Value Your Feedback!</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <textarea placeholder="Your Feedback" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>&copy; 2023 Our Foundation. All rights reserved.</p>
+        <div>
+            <a href="https://facebook.com" class="me-2"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com" class="me-2"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Programs - Our Foundation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .hero {
+            background-image: url('https://media.istockphoto.com/id/911633218/vector/abstract-geometric-medical-cross-shape-medicine-and-science-concept-background.jpg?s=612x612&w=0&k=20&c=eYz8qm5xa5wbWCWKgjOpTamavekYv8XqPTA0MC4tHGA=');
+            /* Replace with your desired image URL */
+            background-size: cover;
+            /* Ensures the image covers the entire section */
+            background-position: center;
+            /* Centers the image */
+            height: 60vh;
+            /* Sets the height of the hero section to full viewport height */
+            display: flex;
+            /* Enables flexbox for centering content */
+            align-items: center;
+            /* Vertically centers the content */
+            justify-content: center;
+            /* Horizontally centers the content */
+            color: white;
+            /* Sets text color for contrast */
+            text-align: center;
+            /* Centers text */
+        }
+
+        .hero-content {
+            padding: 20px;
+            /* Adds padding around the content */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Optional: adds a semi-transparent background for better text visibility */
+            border-radius: 10px;
+            /* Optional: rounds the corners of the content box */
+        }
+
+        .cta-button {
+            background-color: #ffcc00;
+            /* Button background color */
+            color: black;
+            /* Button text color */
+            padding: 10px 20px;
+            /* Button padding */
+            text-decoration: none;
+            /* Removes underline from link */
+            border-radius: 5px;
+            /* Rounds button corners */
+            transition: background-color 0.3s;
+            /* Smooth transition for hover effect */
+        }
+
+        .cta-button:hover {
+            background-color: #e6b800;
+            /* Darkens button on hover */
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .program-card {
+            transition: transform 0.3s;
+        }
+
+        .program-card:hover {
+            transform: scale(1.05);
+        }
+
+        .healthcare-intro {
+            background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210619/pngtree-blue-healthcare-abstract-background-image_730773.jpg');
+            /* Replace with your desired image URL */
+            background-size: cover;
+            /* Cover the entire section */
+            background-position: center;
+            /* Center the image */
+            color: white;
+            /* Text color for better contrast */
+            padding: 60px 20px;
+            /* Adjust padding as needed */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            /* Optional: adds a shadow to the text for better readability */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/ngo-organisation-logo-design-template-c7743343fbd04ee5b4bc57047cd28da6_screen.jpg?ts=1698328069"
+                    alt="Foundation Logo" width="40" height="40" class="d-inline-block align-text-top">
+                Our Foundation
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./healthcare.html">Healthcare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./programs.html">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Healthcare Initiatives</h1>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="py-5 healthcare-intro">
+        <div class="container text-center">
+            <h2>Our Commitment to Healthcare</h2>
+            <p>At Our Foundation, we believe that access to quality healthcare is a fundamental right. Our healthcare
+                initiatives aim to provide essential medical services, education, and support to underserved
+                communities.</p>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Our Healthcare Programs</h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card program-card">
+                        <img src="https://source.unsplash.com/300x200/?doctor" class="card-img-top"
+                            alt="Healthcare Program 1">
+                        <div class="card-body">
+                            <h5 class="card-title"> Healthcare Program 1</h5>
+                            <p class="card-text">Description of the first healthcare program, focusing on its objectives
+                                and the communities it serves.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card program-card">
+                        <img src="https://source.unsplash.com/300x200/?hospital" class="card-img-top"
+                            alt="Healthcare Program 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Healthcare Program 2</h5>
+                            <p class="card-text">Description of the second healthcare program, highlighting its impact
+                                and success stories.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card program-card">
+                        <img src="https://source.unsplash.com/300x200/?nurse" class="card-img-top"
+                            alt="Healthcare Program 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Healthcare Program 3</h5>
+                            <p class="card-text">Description of the third healthcare program, detailing the services
+                                provided and the beneficiaries.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h2>What People Say</h2>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"The healthcare services provided by the foundation have changed my life. I am
+                            forever grateful!"</p> <br>
+                        <footer class="blockquote-footer">John Doe, Beneficiary</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-6">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"Thanks to the foundation, our community now has access to essential medical
+                            care."</p> <br>
+                        <footer class="blockquote-footer">Jane Smith, Community Leader</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-5 bg-light text-center">
+        <div class="container">
+            <h2>Get Involved</h2>
+            <p>Your support can make a difference! Join us in our mission to provide healthcare to those in need.</p>
+            <a href="./donate.html" class="btn btn-warning">Donate Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p class="mt-4">&copy; 2023 Our Foundation. All rights reserved.</p>
+            <p>123 Charity Lane, City, Country</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

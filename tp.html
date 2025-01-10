@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* General Styles */
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: linear-gradient(90deg, #007bff, #00bcd4);
+            border-bottom: 2px solid #eaeaea;
+        }
+
+        .nav-link {
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-link:hover {
+            color: #ffeb3b;
+        }
+
+        .navbar-brand img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            position: relative;
+            height: 60vh;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            filter: brightness(50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Impact Statistics Section */
+        .impact-stats {
+            background-color: #f8f9fa;
+            /* Light grey background */
+        }
+
+        .impact-stats h2 {
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .stat {
+            padding: 15px;
+            background: #fff;
+            /* Optional: white background for stats */
+            border-radius: 10px;
+            /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow */
+            transition: transform 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: scale(1.05);
+            /* Subtle hover effect */
+        }
+
+        .stat h3 {
+            font-size: 2rem;
+            /* Larger number */
+            color: #007bff;
+            /* Primary color */
+            margin-bottom: 5px;
+        }
+
+        .stat p {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        /* Add spacing between columns on smaller screens */
+        @media (max-width: 768px) {
+            .stat {
+                margin-bottom: 20px;
+            }
+        }
+
+
+        /* Featured Programs Styles */
+        .featured-programs {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .featured-programs .program-card {
+            margin: 20px;
+        }
+
+        /* Testimonials Styles */
+        .testimonials {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .testimonials .testimonial {
+            margin: 20px;
+            font-style: italic;
+            color: #555;
+        }
+
+        /* Upcoming Events Styles */
+        .upcoming-events {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .upcoming-events .event {
+            margin: 20px;
+        }
+
+        /* Call to Action Styles */
+        .call-to-action {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .call-to-action a {
+            color: white;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .footer h3 {
+            margin-bottom: 20px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .subscribe-form {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .subscribe-form input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            width: 70%;
+        }
+
+        .subscribe-form button {
+            padding: 10px;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        /* Card Styles */
+        .card {
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-img-top {
+            width: 100%;
+            /* Ensure the image scales to the card's width */
+            height: auto;
+            /* Maintain aspect ratio */
+            object-fit: cover;
+            /* Ensure consistent image presentation */
+        }
+
+
+        /* Animation Styles */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate__animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+
+        .animate__fadeInUp {
+            animation-name: fadeIn;
+        }
+
+        .animate__fadeInDown {
+            animation-name: fadeIn;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/ngo-organisation-logo-design-template-c7743343fbd04ee5b4bc57047cd28da6_screen.jpg?ts=1698328069"
+                    alt="Foundation Logo">
+                Our Foundation
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./programs.html">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./events.html">Events</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Get Involved
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./volunteer.html">Volunteer</a></li>
+                            <li><a class="dropdown-item" href="./donate.html">Donate</a></li>
+                            <li><a class="dropdown-item" href="./partnerships.html">Partnerships</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <img src="https://t3.ftcdn.net/jpg/07/53/95/70/360_F_753957094_P7auPgXTtoyXqhFNWOIMUyl6dgm8sCUe.jpg"
+            alt="Hero Image">
+        <div class="hero-content"><br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1 class="animate__animated animate__fadeInDown display-1">Making a Difference</h1>
+            <p class="animate__animated animate__fadeInUp lead">Together, we can create a better tomorrow</p>
+            <a href="./programs.html"
+                class="btn btn-warning btn-lg animate__animated animate__pulse animate__infinite">Explore Programs</a>
+        </div>
+    </div>
+
+
+    <!-- Impact Statistics Section -->
+    <section class="impact-stats py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Our Impact at a Glance</h2>
+            <div class="row justify-content-center">
+                <!-- Individual Stat -->
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="stat">
+                        <h3 class="text-primary">10,000+</h3>
+                        <p>People Served</p>
+                    </div>
+                </div>
+                <!-- Individual Stat -->
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="stat">
+                        <h3 class="text-primary">50+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                </div>
+                <!-- Individual Stat -->
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="stat">
+                        <h3 class="text-primary">200+</h3>
+                        <p>Volunteers</p>
+                    </div>
+                </div>
+                <!-- Individual Stat -->
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="stat">
+                        <h3 class="text-primary">5</h3>
+                        <p>Years of Service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Featured Programs Section -->
+    <section class="featured-programs">
+        <div class="container">
+            <h2>Featured Programs</h2>
+            <div class="row g-3">
+                <div class="col-md-4 d-flex align-items-stretch">
+                    <div class="card">
+                        <img src="https://source.unsplash.com/300x200/?education" class="card-img-top"
+                            alt="Education Program">
+                        <div class="card-body">
+                            <h5 class="card-title">Education for All</h5>
+                            <p class="card-text">Providing scholarships and resources to underprivileged children.</p>
+                            <a href="./education.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex align-items-stretch">
+                    <div class="card">
+                        <img src="https://source.unsplash.com/300x200/?health" class="card-img-top"
+                            alt="Health Program">
+                        <div class="card-body">
+                            <h5 class="card-title">Health Initiatives</h5>
+                            <p class="card-text">Offering free health check-ups and awareness programs.</p>
+                            <a href="./health.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex align-items-stretch">
+                    <div class="card">
+                        <img src="https://source.unsplash.com/300x200/?community" class="card-img-top"
+                            alt="Community Program">
+                        <div class="card-body">
+                            <h5 class="card-title">Community Development</h5>
+                            <p class="card-text">Empowering communities through skill development workshops.</p>
+                            <a href="./community.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What People Say</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <p class="testimonial">"This foundation changed my life. I now have access to education!" - A
+                        Beneficiary</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="testimonial">"The health initiatives are a blessing for our community." - Local Leader</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="testimonial">"I love volunteering here. It's fulfilling to help others." - Volunteer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section class="upcoming-events bg-light py-5">
+        <div class="container">
+            <h2 class="mb-4 text-center">Upcoming Events</h2>
+            <div class="row text-center">
+                <!-- Event Card -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="https://source.unsplash.com/300x200/?healthcare" class="card-img-top"
+                            alt="Health Camp">
+                        <div class="card-body">
+                            <h5 class="card-title">Health Camp</h5>
+                            <p class="card-text">Date: March 15, 2023</p>
+                            <p>Location: Community Center</p>
+                            <a href="./events.html" class="btn btn-primary">Register</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event Card -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="https://source.unsplash.com/300x200/?cleanup" class="card-img-top"
+                            alt="Community Clean-Up">
+                        <div class="card-body">
+                            <h5 class="card-title">Community Clean-Up</h5>
+                            <p class="card-text">Date: April 10, 2023</p>
+                            <p>Location: Local Park</p>
+                            <a href="./events.html" class="btn btn-primary">Register</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event Card -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="https://source.unsplash.com/300x200/?fundraiser" class="card-img-top"
+                            alt="Annual Fundraiser">
+                        <div class="card-body">
+                            <h5 class="card-title">Annual Fundraiser</h5>
+                            <p class="card-text">Date: May 20, 2023</p>
+                            <p>Location: City Hall</p>
+                            <a href="./events.html" class="btn btn-primary">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Call to Action Section -->
+    <section class="call-to-action">
+        <div class="container">
+            <h2>Get Involved!</h2>
+            <p>Your support can make a difference. Join us in our mission to uplift communities.</p>
+            <a href="./donate.html" class="btn btn-warning btn-lg">Donate Now</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./programs.html">Programs</a></li>
+                        <li><a href="./events.html">Events</a></li>
+                        <li><a href="./contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Subscribe</h3>
+                    <form class="subscribe -form">
+                        <input type="email" placeholder="Enter your email ID" required>
+                        <button type="submit" class="btn btn-warning">Subscribe</button>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <h3>Follow Us</h3>
+                    <a href="https://facebook.com" class="btn btn-outline-light btn-sm"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" class="btn btn-outline-light btn-sm"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" class="btn btn-outline-light btn-sm"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <p class="mt-4">&copy; 2023 Our Foundation. All rights reserved.</p>
+            <p>123 Charity Lane, City, Country</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
